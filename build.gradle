@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+}
+
+group 'eu.assembly11.jpaybysqr'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'com.google.zxing:core:3.5.0'
+    api 'com.google.zxing:javase:3.5.0'
+    api 'org.tukaani:xz:1.9'
+    api 'org.iban4j:iban4j:3.2.3-RELEASE'
+
+    testImplementation 'junit:junit:4.13.2'
+}
+
+
+tasks.named('jar') {
+    manifest {
+        attributes('Automatic-Module-Name': 'eu.assembly11.jpaybysqr')
+    }
+}
